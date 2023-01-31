@@ -6,6 +6,8 @@ import 'package:ice_live_viewer/provider/themeprovider.dart';
 import 'package:ice_live_viewer/utils/init/ioinit.dart'
     if (dart.library.html) 'package:ice_live_viewer/utils/init/htmlinit.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   init();
@@ -17,12 +19,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'IceLiveViewer',
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.app_title,
       themeMode: Provider.of<AppThemeProvider>(context).themeMode,
       theme: MyTheme(Provider.of<AppThemeProvider>(context).themeColor)
           .lightThemeData,
       darkTheme: MyTheme(Provider.of<AppThemeProvider>(context).themeColor)
           .darkThemeData,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', ''), // English
+        Locale('zh', ''), // Chinese
+      ],
       home: enableNewHome ? const NewHome() : const Home(),
     );
   }

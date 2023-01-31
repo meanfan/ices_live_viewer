@@ -7,6 +7,7 @@ import 'package:ice_live_viewer/utils/linkparser.dart';
 import 'package:ice_live_viewer/utils/storage.dart' as storage;
 import 'package:ice_live_viewer/widgets/about.dart';
 import 'package:ice_live_viewer/widgets/platformlisttile.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('IceLiveViewer'),
+        title: Text(AppLocalizations.of(context)!.app_title),
       ),
       body: const ListViewFutureBuilder(),
       drawer: const HomeDrawer(),
@@ -39,12 +40,12 @@ class FloatingButton extends StatelessWidget {
           builder: (BuildContext context) {
             TextEditingController linkTextController = TextEditingController();
             return AlertDialog(
-              title: const Text('Enter the link'),
+              title: Text(AppLocalizations.of(context)!.home_floatingbtn_dialog_title),
               content: TextField(
                 keyboardType: TextInputType.text,
-                decoration: const InputDecoration(
-                  labelText: 'Enter link',
-                  hintText: 'https://m.huya.com/243547',
+                decoration: InputDecoration(
+                  labelText: AppLocalizations.of(context)!.home_floatingbtn_dialog_textfield_label,
+                  hintText: AppLocalizations.of(context)!.home_floatingbtn_dialog_textfield_hint,
                 ),
                 onChanged: (String value) {},
                 //get the text and store it
@@ -52,13 +53,13 @@ class FloatingButton extends StatelessWidget {
               ),
               actions: <Widget>[
                 TextButton(
-                  child: const Text('Cancel'),
+                  child: Text(AppLocalizations.of(context)!.uni_dialog_button_cancel),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                 ),
                 ElevatedButton(
-                  child: const Text('Add'),
+                  child: Text(AppLocalizations.of(context)!.uni_dialog_button_add),
                   onPressed: () {
                     showDialog(
                         context: context,
@@ -69,7 +70,7 @@ class FloatingButton extends StatelessWidget {
                               builder: (context, snapshot) {
                                 if (snapshot.hasError) {
                                   return AlertDialog(
-                                    title: const Text('Error'),
+                                    title: Text(AppLocalizations.of(context)!.uni_dialog_title_error),
                                     content: Text('${snapshot.error}'),
                                     actions: [
                                       ElevatedButton(
@@ -80,14 +81,14 @@ class FloatingButton extends StatelessWidget {
                                               return const Home();
                                             }));
                                           },
-                                          child: const Text('Refresh'))
+                                          child: Text(AppLocalizations.of(context)!.uni_dialog_button_refresh))
                                     ],
                                   );
                                 } else if (snapshot.hasData) {
                                   storage
                                       .saveSingleLink(snapshot.data.toString());
                                   return AlertDialog(
-                                    title: const Text('Success'),
+                                    title: Text(AppLocalizations.of(context)!.uni_dialog_title_success),
                                     actions: [
                                       ElevatedButton(
                                           onPressed: () {
@@ -97,13 +98,13 @@ class FloatingButton extends StatelessWidget {
                                               return const Home();
                                             }));
                                           },
-                                          child: const Text('Refresh'))
+                                          child: Text(AppLocalizations.of(context)!.uni_dialog_button_refresh))
                                     ],
                                   );
                                 } else {
-                                  return const AlertDialog(
-                                    title: Text('Loading'),
-                                    content: LinearProgressIndicator(
+                                  return AlertDialog(
+                                    title: Text(AppLocalizations.of(context)!.uni_dialog_title_loading),
+                                    content: const LinearProgressIndicator(
                                       minHeight: 10,
                                     ),
                                   );
@@ -142,13 +143,13 @@ class HomeDrawer extends StatelessWidget {
                 ),
                 const Padding(padding: EdgeInsets.only(left: 10)),
                 Center(
-                    child: Text('IceLiveViewer',
+                    child: Text(AppLocalizations.of(context)!.app_title,
                         style: Theme.of(context).textTheme.headline1)),
               ],
             ),
           ),
           ListTile(
-            title: const Text('Settings'),
+            title: Text(AppLocalizations.of(context)!.home_drawer_list_titles_settings),
             leading: const Icon(Icons.settings),
             onTap: () {
               Navigator.push(
@@ -158,7 +159,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Refresh Data'),
+            title: Text(AppLocalizations.of(context)!.home_drawer_list_titles_refreshdata),
             leading: const Icon(Icons.refresh),
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -167,7 +168,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Clear Data'),
+            title: Text(AppLocalizations.of(context)!.home_drawer_list_titles_cleardata),
             leading: const Icon(Icons.delete),
             onTap: () {
               //ask user if he is sure to clear the data
@@ -175,12 +176,11 @@ class HomeDrawer extends StatelessWidget {
                 context: context,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: const Text('Clear Data'),
-                    content: const Text(
-                        'Are you sure to clear all the data?\nAll these data will disappear!'),
+                    title: Text(AppLocalizations.of(context)!.home_drawer_list_titles_cleardata_dialog_title),
+                    content: Text(AppLocalizations.of(context)!.home_drawer_list_titles_cleardata_dialog_content),
                     actions: <Widget>[
                       TextButton(
-                        child: const Text('Ok'),
+                        child: Text(AppLocalizations.of(context)!.uni_dialog_button_ok),
                         onPressed: () {
                           Navigator.of(context).pop();
                           storage.clearData();
@@ -188,7 +188,7 @@ class HomeDrawer extends StatelessWidget {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: const Text('Success'),
+                                title: Text(AppLocalizations.of(context)!.uni_dialog_title_success),
                                 actions: [
                                   ElevatedButton(
                                       onPressed: () {
@@ -198,7 +198,7 @@ class HomeDrawer extends StatelessWidget {
                                           return const Home();
                                         }));
                                       },
-                                      child: const Text('Refresh'))
+                                      child: Text(AppLocalizations.of(context)!.uni_dialog_button_refresh))
                                 ],
                               );
                             },
@@ -206,7 +206,7 @@ class HomeDrawer extends StatelessWidget {
                         },
                       ),
                       ElevatedButton(
-                        child: const Text('Cancel'),
+                        child: Text(AppLocalizations.of(context)!.uni_dialog_button_cancel),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
@@ -218,7 +218,7 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Help'),
+            title: Text(AppLocalizations.of(context)!.home_drawer_list_titles_help),
             leading: const Icon(Icons.help_outline_outlined),
             onTap: () {
               Navigator.push(
@@ -273,7 +273,7 @@ class _ListViewFutureBuilderState extends State<ListViewFutureBuilder> {
             if (snapshot.hasError) {
               return ListTile(
                 leading: const Icon(Icons.error_outline),
-                title: Text('Error:Storage Error${snapshot.error}'),
+                title: Text(AppLocalizations.of(context)!.home_center_error(snapshot.error)),
               );
             } else if (snapshot.hasData) {
               final Object? links = snapshot.data;
@@ -292,7 +292,7 @@ class _ListViewFutureBuilderState extends State<ListViewFutureBuilder> {
                       ),
                       Expanded(
                         child: Text(
-                            'No data :(\n\nClick the button below \n to add your first link',
+                            AppLocalizations.of(context)!.home_center_nodata,
                             style: Theme.of(context).textTheme.headline2,
                             textAlign: TextAlign.center),
                       ),

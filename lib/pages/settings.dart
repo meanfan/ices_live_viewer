@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ice_live_viewer/provider/themeprovider.dart';
 import 'package:ice_live_viewer/utils/storage.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -16,22 +17,22 @@ class SettingsPage extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const Text('Settings'),
+        title: Text(AppLocalizations.of(context)!.settings_title),
       ),
       body: ListView(
         children: <Widget>[
-          const SectionTitle(
-            title: 'General',
+          SectionTitle(
+            title: AppLocalizations.of(context)!.settings_sections_general_title,
           ),
           ListTile(
-            title: const Text('Under Construction'),
-            subtitle: const Text('This page is still not complete'),
+            title: Text(AppLocalizations.of(context)!.settings_sections_general_uc_title),
+            subtitle: Text(AppLocalizations.of(context)!.settings_sections_general_uc_subtitle),
             leading: const Icon(Icons.construction_rounded, size: 32),
             onTap: () {},
           ),
           ListTile(
-            title: const Text('Change Theme Color'),
-            subtitle: const Text('Change the theme color of the app'),
+            title: Text(AppLocalizations.of(context)!.settings_sections_general_themecolor_title),
+            subtitle: Text(AppLocalizations.of(context)!.settings_sections_general_themecolor_subtitle),
             leading: const Icon(Icons.color_lens, size: 32),
             onTap: () {
               Provider.of<AppThemeProvider>(context, listen: false)
@@ -39,8 +40,8 @@ class SettingsPage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Change Theme Mode'),
-            subtitle: const Text('Change the theme mode of the app'),
+            title: Text(AppLocalizations.of(context)!.settings_sections_general_thememode_title),
+            subtitle: Text(AppLocalizations.of(context)!.settings_sections_general_thememode_subtitle),
             leading: const Icon(Icons.dark_mode_rounded, size: 32),
             onTap: () {
               Provider.of<AppThemeProvider>(context, listen: false)
@@ -48,30 +49,27 @@ class SettingsPage extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('[Not complete]Change Language'),
-            subtitle: const Text('Change the language of the app'),
+            title: Text(AppLocalizations.of(context)!.settings_sections_general_language_title),
+            subtitle: Text(AppLocalizations.of(context)!.settings_sections_general_language_subtitle),
             leading: const Icon(Icons.translate_rounded, size: 32),
             onTap: () {},
           ),
-          const SwitchTile(
-            title: 'Use custom resolution for Huya',
-            subtitle:
-                'Use custom resolution for Huya, if you want to use a custom resolution for Huya, you should enable this option',
+          SwitchTile(
+            title: AppLocalizations.of(context)!.settings_sections_general_huyaresolution_title,
+            subtitle: AppLocalizations.of(context)!.settings_sections_general_huyaresolution_subtitle,
             settingKey: 'use_custom_resolution_for_huya',
           ),
-          const SwitchTile(
-            title: '[Deprecated]Use .m3u8 for Bilibili',
-            subtitle:
-                'Use .m3u8 format to play Bilibili live stream instead of the default .flv format, when you find that Bilibili live stream cannot be played, you can try this option.',
+          SwitchTile(
+            title: AppLocalizations.of(context)!.settings_sections_general_bilibilim3u8_title,
+            subtitle: AppLocalizations.of(context)!.settings_sections_general_bilibilim3u8_subtitle,
             settingKey: 'use_m3u8',
           ),
-          const SectionTitle(
-            title: 'Experimental',
+          SectionTitle(
+            title: AppLocalizations.of(context)!.settings_sections_experimental_title,
           ),
-          const SwitchTile(
-            title: '[Only Windows|Not complete] Use Native Player',
-            subtitle:
-                'This setup only uses Win32 APIs & no texture, intermediate buffers or copying of pixel buffers.',
+          SwitchTile(
+            title: AppLocalizations.of(context)!.settings_sections_experimental_usewinnativeplayer_title,
+            subtitle: AppLocalizations.of(context)!.settings_sections_experimental_usewinnativeplayer_subtitle,
             settingKey: 'use_native_player',
           ),
         ],

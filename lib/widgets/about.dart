@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ice_live_viewer/utils/http/checkupdate.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class About extends StatelessWidget {
   const About({
@@ -13,12 +14,12 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-        title: const Text('About'),
+        title: Text(AppLocalizations.of(context)!.about_title),
         leading: const Icon(Icons.info_outline_rounded),
         onTap: () {
           showAboutDialog(
               context: context,
-              applicationName: 'IceLiveViewer',
+              applicationName: AppLocalizations.of(context)!.app_title,
               applicationVersion: version,
               applicationIcon: SizedBox(
                 width: 60,
@@ -28,7 +29,7 @@ class About extends StatelessWidget {
               ),
               children: [
                 ListTile(
-                  title: const Text('Check for updates'),
+                  title: Text(AppLocalizations.of(context)!.about_update_title),
                   leading: const Icon(
                     Icons.upload_rounded,
                     size: 32,
@@ -44,22 +45,21 @@ class About extends StatelessWidget {
                                       (snapshot.data as String).split('-');
                                   if (result[0] == '1') {
                                     return AlertDialog(
-                                      title: const Text('Check for updates'),
-                                      content: Text(
-                                          'There is a new version: ${result[1]} available, do you want to update?'),
+                                      title: Text(AppLocalizations.of(context)!.about_update_title),
+                                      content: Text(AppLocalizations.of(context)!.about_update_dialog_text(result[1])),
                                       actions: <Widget>[
                                         TextButton(
-                                          child: const Text('Cancel'),
+                                          child: Text(AppLocalizations.of(context)!.uni_dialog_button_cancel),
                                           onPressed: () {
                                             Navigator.pop(context);
                                           },
                                         ),
                                         ElevatedButton(
-                                          child: const Text('Update'),
+                                          child: Text(AppLocalizations.of(context)!.uni_dialog_button_update),
                                           onPressed: () {
                                             Navigator.pop(context);
                                             _launchUrl(
-                                                'https://github.com/iiijam/ice_live_viewer/releases');
+                                                'https://github.com/meanfan/ices_live_viewer/releases');
                                             //launch(snapshot.data);
                                           },
                                         ),
@@ -67,12 +67,11 @@ class About extends StatelessWidget {
                                     );
                                   } else {
                                     return AlertDialog(
-                                      title: const Text('Check for updates'),
-                                      content: const Text(
-                                          'You are using the latest version.'),
+                                      title: Text(AppLocalizations.of(context)!.about_update_title),
+                                      content: Text(AppLocalizations.of(context)!.about_update_dialog_latest_text),
                                       actions: <Widget>[
                                         TextButton(
-                                          child: const Text('OK'),
+                                          child: Text(AppLocalizations.of(context)!.uni_dialog_button_ok),
                                           onPressed: () {
                                             Navigator.pop(context);
                                           },
@@ -82,12 +81,11 @@ class About extends StatelessWidget {
                                   }
                                 } else if (snapshot.hasError) {
                                   return AlertDialog(
-                                    title: const Text('Check for updates'),
-                                    content: Text(
-                                        'Failed to check for updates, please try again later.\n${snapshot.error}'),
+                                    title: Text(AppLocalizations.of(context)!.about_update_title),
+                                    content: Text(AppLocalizations.of(context)!.about_update_dialog_failed_text(snapshot.error)),
                                     actions: <Widget>[
                                       TextButton(
-                                        child: const Text('OK'),
+                                        child: Text(AppLocalizations.of(context)!.uni_dialog_button_ok),
                                         onPressed: () {
                                           Navigator.pop(context);
                                         },
@@ -95,9 +93,9 @@ class About extends StatelessWidget {
                                     ],
                                   );
                                 } else {
-                                  return const AlertDialog(
-                                    title: Text('Loading'),
-                                    content: LinearProgressIndicator(
+                                  return  AlertDialog(
+                                    title: Text(AppLocalizations.of(context)!.uni_dialog_title_loading),
+                                    content: const LinearProgressIndicator(
                                       minHeight: 10,
                                     ),
                                   );
@@ -107,13 +105,13 @@ class About extends StatelessWidget {
                   },
                 ),
                 ListTile(
-                  title: const Text('Github'),
+                  title: Text(AppLocalizations.of(context)!.about_list_github_title),
                   leading: const Icon(
                     Icons.open_in_new_rounded,
                     size: 32,
                   ),
                   onTap: () {
-                    _launchUrl('https://github.com/iiijam/ice_live_viewer/');
+                    _launchUrl('https://github.com/meanfan/ices_live_viewer');
                   },
                 ),
               ]);

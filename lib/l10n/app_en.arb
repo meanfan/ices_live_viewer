@@ -1,0 +1,145 @@
+{
+    "app_title": "IcesLiveViewer",
+    "@main_title": {
+        "description": "A live stream viewer with improved experience."
+    },
+
+    "uni_dialog_button_ok": "OK",
+    "uni_dialog_button_add": "Add",
+    "uni_dialog_button_cancel": "Cancel",
+    "uni_dialog_button_refresh": "Refresh",
+    "uni_dialog_button_update": "Update",
+    "uni_dialog_button_delete": "Delete",
+    "uni_dialog_button_back": "Back",
+    "uni_dialog_title_success": "Success",
+    "uni_dialog_title_error": "Error",
+    "uni_dialog_title_loading": "Loading",
+    "uni_dialog_title_offline": "Offline",
+
+    "uni_color_crimson": "Crimson",
+    "uni_color_orange": "Orange",
+    "uni_color_chrome": "Chrome",
+    "uni_color_grass": "Grass",
+    "uni_color_teal": "Teal",
+    "uni_color_seafoam": "Sea Foam",
+    "uni_color_ice": "Ice",
+    "uni_color_blue": "Blue",
+    "uni_color_indigo": "Indigo",
+    "uni_color_violet": "Violet",
+    "uni_color_orchid": "Orchid",
+
+    "home_floatingbtn_dialog_title": "Add Streaming",
+    "home_floatingbtn_dialog_textfield_label": "Enter the link",
+    "home_floatingbtn_dialog_textfield_hint": "https://m.huya.com/243547",
+    "home_drawer_list_titles_settings": "Settings",
+    "home_drawer_list_titles_refreshdata": "Refresh Data",
+    "home_drawer_list_titles_cleardata": "Clear Data",
+    "home_drawer_list_titles_cleardata_dialog_title": "Clear Data",
+    "home_drawer_list_titles_cleardata_dialog_content": "Are you sure to clear all the data?\nAll these data will disappear!",
+    "home_drawer_list_titles_help": "Help",
+    "home_center_error": "Error:Storage Error {snapshot_error}",
+    "@home_center_error":{
+        "placeholders": {
+            "snapshot_error": {
+                "type": "Object?"
+            }
+        }
+    },
+    "home_center_nodata": "No data :(\n\nClick the button below \n to add your first link",
+
+    "settings_title": "Settings",
+    "settings_sections_general_title": "General",
+    "settings_sections_general_uc_title": "Under Construction",
+    "settings_sections_general_uc_subtitle": "This page is still not complete",
+    "settings_sections_general_themecolor_title": "Change Theme Color",
+    "settings_sections_general_themecolor_subtitle": "Change the theme color of the app",
+    "settings_sections_general_thememode_title": "Change Theme Mode",
+    "settings_sections_general_thememode_subtitle": "Change the theme mode of the app",
+    "settings_sections_general_language_title": "[Not complete]Change Language",
+    "settings_sections_general_language_subtitle": "Change the language of the app",
+    "settings_sections_general_huyaresolution_title": "Use custom resolution for Huya",
+    "settings_sections_general_huyaresolution_subtitle": "Use custom resolution for Huya, if you want to use a custom resolution for Huya, you should enable this option",
+    "settings_sections_general_bilibilim3u8_title": "[Deprecated]Use .m3u8 for Bilibili",
+    "settings_sections_general_bilibilim3u8_subtitle": "Use .m3u8 format to play Bilibili live stream instead of the default .flv format, when you find that Bilibili live stream cannot be played, you can try this option.",
+    "settings_sections_experimental_title": "Experimental",
+    "settings_sections_experimental_usewinnativeplayer_title": "[Only Windows|Not complete] Use Native Player",
+    "settings_sections_experimental_usewinnativeplayer_subtitle": "This setup only uses Win32 APIs & no texture, intermediate buffers or copying of pixel buffers.",
+    "settings_thememodedialog_title": "Theme Mode",
+    "settings_thememodedialog_modes_system": "System",
+    "settings_thememodedialog_modes_dark": "Dark",
+    "settings_thememodedialog_modes_light": "Light",
+    "settings_themecolordialog_title": "Change Theme",
+
+    "help_title": "Help",
+    "help_body_sections_how_title":"How to Use",
+    "help_body_sections_how_text":"You can use this application to follow the streaming of Huya, Douyu and Bilibili",
+    "help_body_sections_support_title":"Supported Link Format",
+    "help_body_sections_support_text":"Huya：\nhttps://*.huya.com/<ROOM_NUMBER>\nThe room number of some of the streaming of Huya is the letter, no need for manual operation, the letter will be automatically converted\n\nBilibili：\nhttps://*.bilibili.com/<ROOM_NUMBER>\n\nDouyu：\nhttps://*.douyu.com/<ROOM_NUMBER>\nhttps://www.douyu.com/topic/<TOPIC>?rid=<ROOM_NUMBER>\nSome streaming of Douyu is a fake number, which can also be converted",
+    "help_body_sections_playissue_title":"Unsupported Link",
+    "help_body_sections_playissue_text":"Huya YiQiKan，Douyu LunBo is not watchable.\n\nFor some IP, Bilibili's `.flv` format cannot be played. Try to use the` .m3u8` format. You can also try to play in other players.\n\nVLC is used on the Windows version, and the system played component is used on Android. If there are any questions, please submit issue.",
+
+    "about_title": "About",
+    "about_update_title": "Check for updates",
+    "about_update_dialog_text": "There is a new version: {result1} available, do you want to update?",
+    "@about_update_dialog_text":{
+        "placeholders": {
+            "result1": {
+                "type": "dynamic"
+            }
+        }
+    },
+    "about_update_dialog_latest_text":"You are using the latest version.",
+    "about_update_dialog_failed_text":"Failed to check for updates, please try again later.\n{snapshot_error}",
+    "@about_update_dialog_failed_text":{
+        "placeholders": {
+            "snapshot_error": {
+                "type": "Object?"
+            }
+        }
+    },
+    "about_list_github_title": "Github",
+
+    "platformlisttile_tiles_dialog_loading": "Loading...",
+    "platformlisttile_tiles_dialog_cdn_btn_copy_tooltip": "Copy",
+    "platformlisttile_tiles_dialog_cdn_btn_copy_selected_message": "Copied to clipboard",
+    "platformlisttile_tiles_dialog_cdn_btn_play_tooltip": "Play",
+    "platformlisttile_tiles_dialog_cdn_btn_onlydanmaku_tooltip": "Only danmaku",
+    "platformlisttile_tiles_errordialog_image": "Error loading image: {error_str}",
+    "@platformlisttile_tiles_errordialog_image":{
+        "placeholders": {
+            "error_str": {
+                "type": "String"
+            }
+        }
+    },
+    "platformlisttile_tiles_btn_delete": "Delete",
+    "platformlisttile_tiles_btn_back": "Back",
+    "platformlisttile_tiles_offline_title_disconnected": "Disconnected",
+    "platformlisttile_tiles_offline_title_offline": "Offline - {title}",
+    "@platformlisttile_tiles_offline_title_offline":{
+        "placeholders": {
+            "title": {
+              "type": "String?"
+            }
+        }
+    },
+    "platformlisttile_tiles_error_title": "Error",
+    "platformlisttile_tiles_error_subtitle": "For specific reasons, we do not have access to this live room",
+    "platformlisttile_tiles_error_dialog_title": "For specific reasons, we do not have access to this live room. Please check whether this live room can be accessed normally, if not, please submit the error message below.",
+    "platformlisttile_tiles_error_dialog_content": "Error: \n{error} \nRaw link: \n{rawLink}\nStack: \n{stackTrace}",
+    "@platformlisttile_tiles_error_dialog_content":{
+        "placeholders": {
+            "error": {
+                "type": "Object?"
+            },
+            "rawLink": {
+                "type": "String?"
+            },
+            "stackTrace": {
+                "type": "Object?"
+            }
+        }
+    },
+    "platformlisttile_tiles_error_dialog_btn_copyerror": "Copy Error",
+    "platformlisttile_tiles_cdn_order": "Circuit"
+}

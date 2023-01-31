@@ -1,0 +1,145 @@
+{
+    "app_title": "泠直播",
+    "@main_title": {
+        "description": "一款更好的直播聚合软件。"
+    },
+
+    "uni_dialog_button_ok": "确定",
+    "uni_dialog_button_add": "添加",
+    "uni_dialog_button_cancel": "取消",
+    "uni_dialog_button_refresh": "刷新",
+    "uni_dialog_button_update": "更新",
+    "uni_dialog_button_delete": "删除",
+    "uni_dialog_button_back": "返回",
+    "uni_dialog_title_success": "成功",
+    "uni_dialog_title_error": "错误",
+    "uni_dialog_title_loading": "读取中",
+    "uni_dialog_title_offline": "离线",
+
+    "uni_color_crimson": "赤红",
+    "uni_color_orange": "橙黃",
+    "uni_color_chrome": "铬黄",
+    "uni_color_grass": "草绿",
+    "uni_color_teal": "蓝绿",
+    "uni_color_seafoam": "海泡沫",
+    "uni_color_ice": "冰",
+    "uni_color_blue": "蓝",
+    "uni_color_indigo": "靛青",
+    "uni_color_violet": "紫罗兰",
+    "uni_color_orchid": "兰花",
+
+    "home_floatingbtn_dialog_title": "添加直播间",
+    "home_floatingbtn_dialog_textfield_label": "输入链接",
+    "home_floatingbtn_dialog_textfield_hint": "https://m.huya.com/243547",
+    "home_drawer_list_titles_settings": "设置",
+    "home_drawer_list_titles_refreshdata": "刷新数据",
+    "home_drawer_list_titles_cleardata": "清除数据",
+    "home_drawer_list_titles_cleardata_dialog_title": "清除数据",
+    "home_drawer_list_titles_cleardata_dialog_content": "确定清除所有数据？\n所有数据将永久丢失!",
+    "home_drawer_list_titles_help": "帮助",
+    "home_center_error": "错误：存储错误 {snapshot_error}",
+    "@home_center_error":{
+        "placeholders": {
+            "snapshot_error": {
+                "type": "Object?"
+            }
+        }
+    },
+    "home_center_nodata": "没有数据 :(\n\n点击下方按钮 \n 添加直播间",
+
+    "settings_title": "设置",
+    "settings_sections_general_title": "通用",
+    "settings_sections_general_uc_title": "建设中",
+    "settings_sections_general_uc_subtitle": "该页面内容还在建设当中",
+    "settings_sections_general_themecolor_title": "设置主题颜色",
+    "settings_sections_general_themecolor_subtitle": "更改本应用的主题颜色",
+    "settings_sections_general_thememode_title": "设置主题模式",
+    "settings_sections_general_thememode_subtitle": "更改本应用的主题模式",
+    "settings_sections_general_language_title": "[未实现] 设置语言",
+    "settings_sections_general_language_subtitle": "更改本应用的语言",
+    "settings_sections_general_huyaresolution_title": "虎牙使用自定义分辨率",
+    "settings_sections_general_huyaresolution_subtitle": "启用该选项让虎牙使用自定义分辨率",
+    "settings_sections_general_bilibilim3u8_title": "[已失效] Bilibili 使用 .m3u8",
+    "settings_sections_general_bilibilim3u8_subtitle": "播放Bilibili直播时使用 .m3u8 格式而不是默认的 .flv 格式，当直播无法播放时可尝试该选项",
+    "settings_sections_experimental_title": "实验性",
+    "settings_sections_experimental_usewinnativeplayer_title": "[仅限Windows|未实现] 使用原生播放器",
+    "settings_sections_experimental_usewinnativeplayer_subtitle": "该项设置仅使用Win32 APIs且无纹理，以及中间缓冲区或者像素复制缓冲区",
+    "settings_thememodedialog_title": "主题模式",
+    "settings_thememodedialog_modes_system": "跟随系统",
+    "settings_thememodedialog_modes_dark": "深色",
+    "settings_thememodedialog_modes_light": "浅色",
+    "settings_themecolordialog_title": "更改主题颜色",
+
+    "help_title": "帮助",
+    "help_body_sections_how_title":"如何使用",
+    "help_body_sections_how_text":"你可以使用本应用程序追踪虎牙，斗鱼和哔哩哔哩的主播",
+    "help_body_sections_support_title":"可解析的链接",
+    "help_body_sections_support_text":"虎牙：\nhttps://*.huya.com/<房间号>\n虎牙的部分主播的房间号是字母，无需手动操作，字母会被自动转换\n\nBilibili：\nhttps://*.bilibili.com/<房间号>\n\n斗鱼：\nhttps://*.douyu.com/<房间号>\nhttps://www.douyu.com/topic/<话题>?rid=<房间号>\n斗鱼的部分房间是虚假号码，也可以被转换",
+    "help_body_sections_playissue_title":"部分链接无法播放",
+    "help_body_sections_playissue_text":"虎牙一起看，斗鱼轮播无法播放。\n\n对于部分IP，哔哩哔哩的`.flv`格式的直播流无法播放，尝试使用`.m3u8`格式的直播流播流，也可以尝试在其它播放器播放。\n\n在Windows版本上使用的是VLC，在Android上使用的是系统播放组件，如果存在问题请提issue。",
+
+    "about_title": "关于",
+    "about_update_title": "检查更新",
+    "about_update_dialog_text": "发现新版本: {result1}，是否更新？",
+    "@about_update_dialog_text":{
+        "placeholders": {
+            "result1": {
+                "type": "dynamic"
+            }
+        }
+    },
+    "about_update_dialog_latest_text":"当前版本为最新版本。",
+    "about_update_dialog_failed_text":"检查更新失败，请稍后再试。\n{snapshot_error}",
+    "@about_update_dialog_failed_text":{
+        "placeholders": {
+            "snapshot_error": {
+                "type": "Object?"
+            }
+        }
+    },
+    "about_list_github_title": "Github",
+
+    "platformlisttile_tiles_dialog_loading": "读取中...",
+    "platformlisttile_tiles_dialog_cdn_btn_copy_tooltip": "复制",
+    "platformlisttile_tiles_dialog_cdn_btn_copy_selected_message": "已复制到剪切板",
+    "platformlisttile_tiles_dialog_cdn_btn_play_tooltip": "播放",
+    "platformlisttile_tiles_dialog_cdn_btn_onlydanmaku_tooltip": "仅弹幕",
+    "platformlisttile_tiles_errordialog_image": "读取图像失败: {error_str}",
+    "@platformlisttile_tiles_errordialog_image":{
+        "placeholders": {
+            "error_str": {
+                "type": "String"
+            }
+        }
+    },
+    "platformlisttile_tiles_btn_delete": "删除",
+    "platformlisttile_tiles_btn_back": "返回",
+    "platformlisttile_tiles_offline_title_disconnected": "离线",
+    "platformlisttile_tiles_offline_title_offline": "离线 - {title}",
+    "@platformlisttile_tiles_offline_title_offline":{
+        "placeholders": {
+            "title": {
+              "type": "String?"
+            }
+        }
+    },
+    "platformlisttile_tiles_error_title": "错误",
+    "platformlisttile_tiles_error_subtitle": "暂时无法访问该直播间",
+    "platformlisttile_tiles_error_dialog_title": "出现了问题，暂时无法访问该直播间，下面的内容或许可以帮助解决问题",
+    "platformlisttile_tiles_error_dialog_content": "错误：\n{error} \n原始链接：\n{rawLink}\n堆栈信息：\n{stackTrace}",
+    "@platformlisttile_tiles_error_dialog_content":{
+        "placeholders": {
+            "error": {
+                "type": "Object?"
+            },
+            "rawLink": {
+                "type": "String?"
+            },
+            "stackTrace": {
+                "type": "Object?"
+            }
+        }
+    },
+    "platformlisttile_tiles_error_dialog_btn_copyerror": "复制错误信息",
+    "platformlisttile_tiles_cdn_order": "线路"
+}

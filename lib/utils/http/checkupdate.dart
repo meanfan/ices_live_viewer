@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 Future<String> judgeVersion(String version) async {
   var resp = await http.get(Uri.parse(
-      'https://api.github.com/repos/iiijam/ice_live_viewer/releases'));
+      'https://api.github.com/repos/meanfan/ices_live_viewer/releases'));
   var body = await jsonDecode(resp.body);
   String networkVersion = body[0]['tag_name'].replaceAll('v', '');
   List networkVersions = networkVersion.split('-')[0].split('.');

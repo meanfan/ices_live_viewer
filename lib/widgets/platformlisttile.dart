@@ -10,6 +10,7 @@ import 'package:ice_live_viewer/utils/http/douyuparser.dart';
 import 'package:ice_live_viewer/utils/keepalivewrapper.dart';
 import 'package:ice_live_viewer/utils/linkparser.dart';
 import 'package:ice_live_viewer/utils/storage.dart' as storage;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HuyaFutureListTileSkeleton extends StatelessWidget {
   const HuyaFutureListTileSkeleton({
@@ -54,9 +55,9 @@ class HuyaFutureListTileSkeleton extends StatelessWidget {
               stackTrace: snapshot.stackTrace,
             );
           }
-          return const ListTile(
-            title: Text('Loading...'),
-            subtitle: LinearProgressIndicator(),
+          return  ListTile(
+            title: Text(AppLocalizations.of(context)!.platformlisttile_tiles_dialog_loading),
+            subtitle: const LinearProgressIndicator(),
           );
         },
       ),
@@ -118,13 +119,13 @@ class HuyaOnlineListTile extends StatelessWidget {
                       children: [
                         PopupMenuButton<String>(
                           icon: const Icon(Icons.copy),
-                          tooltip: 'Copy',
+                          tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_copy_tooltip,
                           onSelected: (context) {
                             Clipboard.setData(ClipboardData(text: context));
                             //show a scaffold to show the copy success
                             ScaffoldMessenger.of(this.context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Copied to clipboard')));
+                                SnackBar(
+                                    content: Text(AppLocalizations.of(this.context)!.platformlisttile_tiles_dialog_cdn_btn_copy_selected_message)));
                           },
                           itemBuilder: (context) {
                             return givenResolution;
@@ -132,7 +133,7 @@ class HuyaOnlineListTile extends StatelessWidget {
                         ),
                         PopupMenuButton<String>(
                           icon: const Icon(Icons.play_arrow),
-                          tooltip: 'Play',
+                          tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_play_tooltip,
                           onSelected: (context) {
                             String roomSelectedUrl = context;
                             Navigator.push(
@@ -150,7 +151,7 @@ class HuyaOnlineListTile extends StatelessWidget {
                         ),
                         IconButton(
                           icon: const Icon(Icons.comment_outlined),
-                          tooltip: 'Only danmaku',
+                          tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_onlydanmaku_tooltip,
                           onPressed: () {
                             Navigator.push(
                                 context,
@@ -183,7 +184,7 @@ class HuyaOnlineListTile extends StatelessWidget {
                           height: 200,
                           child: Center(
                             child:
-                                Text('Error loading image:$error.toString()'),
+                                Text(AppLocalizations.of(context)!.platformlisttile_tiles_errordialog_image(error.toString())),
                           ),
                         );
                       }, loadingBuilder: (context, child, progress) {
@@ -203,7 +204,7 @@ class HuyaOnlineListTile extends StatelessWidget {
                 ),
                 actions: <Widget>[
                   TextButton(
-                      child: const Text('Delete'),
+                      child: Text(AppLocalizations.of(context)!.uni_dialog_button_delete),
                       onPressed: () {
                         storage.deleteSingleLink(rawLink);
                         Navigator.push(context,
@@ -212,7 +213,7 @@ class HuyaOnlineListTile extends StatelessWidget {
                         }));
                       }),
                   ElevatedButton(
-                    child: const Text('Back'),
+                    child: Text(AppLocalizations.of(context)!.uni_dialog_button_back),
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -246,7 +247,7 @@ class OfflineListTile extends StatelessWidget {
         backgroundImage: NetworkImage(avatar),
       ),
       title: Text(
-        title == '' ? 'Disconnected' : 'Offline - $title',
+        title == '' ? AppLocalizations.of(context)!.platformlisttile_tiles_offline_title_disconnected : AppLocalizations.of(context)!.platformlisttile_tiles_offline_title_offline(title),
         style: TextStyle(color: Theme.of(context).disabledColor),
       ),
       subtitle: Text(anchor),
@@ -256,10 +257,10 @@ class OfflineListTile extends StatelessWidget {
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: const Text('Offline'),
+                title: Text(AppLocalizations.of(context)!.uni_dialog_title_offline),
                 actions: [
                   TextButton(
-                      child: const Text('Delete'),
+                      child: Text(AppLocalizations.of(context)!.uni_dialog_button_delete),
                       onPressed: () {
                         storage.deleteSingleLink(rawLink);
                         Navigator.push(context,
@@ -295,9 +296,8 @@ class ErrorListTile extends StatelessWidget {
         size: 40.0,
         color: Color.fromARGB(255, 255, 112, 112),
       ),
-      title: const Text('Error'),
-      subtitle: const Text(
-          'For specific reasons, we do not have access to this live room'),
+      title: Text(AppLocalizations.of(context)!.platformlisttile_tiles_error_title),
+      subtitle: Text(AppLocalizations.of(context)!.platformlisttile_tiles_error_subtitle),
       trailing: const Icon(Icons.chevron_right_sharp),
       onTap: () {
         showDialog(
@@ -305,13 +305,11 @@ class ErrorListTile extends StatelessWidget {
             builder: (context) {
               return AlertDialog(
                   scrollable: true,
-                  title: const Text(
-                      'For specific reasons, we do not have access to this live room. Please check whether this live room can be accessed normally, if not, please submit the error message below.\n出现了问题，下面的内容或许可以帮助解决问题'),
-                  content: Text(
-                      'The Error is:\n$error \nHere is the raw link: $rawLink\nStack is:\n$stackTrace'),
+                  title: Text(AppLocalizations.of(context)!.platformlisttile_tiles_error_dialog_title),
+                  content: Text(AppLocalizations.of(context)!.platformlisttile_tiles_error_dialog_content(error, rawLink, stackTrace)),
                   actions: <Widget>[
                     TextButton(
-                        child: const Text('Delete'),
+                        child: Text(AppLocalizations.of(context)!.uni_dialog_button_delete),
                         onPressed: () {
                           storage.deleteSingleLink(rawLink);
                           Navigator.push(context,
@@ -320,7 +318,7 @@ class ErrorListTile extends StatelessWidget {
                           }));
                         }),
                     ElevatedButton(
-                        child: const Text('Copy Error'),
+                        child: Text(AppLocalizations.of(context)!.platformlisttile_tiles_error_dialog_btn_copyerror),
                         onPressed: () {
                           Clipboard.setData(
                               ClipboardData(text: '$error\n$stackTrace'));
@@ -376,9 +374,9 @@ class BilibiliFutureListTileSkeleton extends StatelessWidget {
                 rawLink: url,
                 stackTrace: snapshot.stackTrace);
           }
-          return const ListTile(
-            title: Text('Loading...'),
-            subtitle: LinearProgressIndicator(),
+          return  ListTile(
+            title: Text(AppLocalizations.of(context)!.platformlisttile_tiles_dialog_loading),
+            subtitle: const LinearProgressIndicator(),
           );
         },
       ),
@@ -430,7 +428,7 @@ class BilibiliOnlineListTile extends StatelessWidget {
                     PopupMenuItem<String>(
                       value: cdnLink,
                       child: Text(
-                          cdnLink.split('&').last.replaceAll('order=', '线路')),
+                          cdnLink.split('&').last.replaceAll('order=', AppLocalizations.of(context)!.platformlisttile_tiles_cdn_order)),
                     ),
                   );
                 }
@@ -445,7 +443,7 @@ class BilibiliOnlineListTile extends StatelessWidget {
                     children: [
                       PopupMenuButton<String>(
                         icon: const Icon(Icons.play_arrow),
-                        tooltip: 'Play',
+                        tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_play_tooltip,
                         onSelected: (context) {
                           String roomSelectedUrl = context;
                           Navigator.push(
@@ -463,15 +461,15 @@ class BilibiliOnlineListTile extends StatelessWidget {
                       ),
                       PopupMenuButton<String>(
                         icon: const Icon(Icons.copy),
-                        tooltip: 'Copy',
+                        tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_copy_tooltip,
                         onSelected: (context) {
                           String roomSelectedUrl = context;
                           Clipboard.setData(
                               ClipboardData(text: roomSelectedUrl));
                           //show a scaffold to show the copy success
                           ScaffoldMessenger.of(this.context).showSnackBar(
-                              const SnackBar(
-                                  content: Text('Copied to clipboard')));
+                              SnackBar(
+                                  content: Text(AppLocalizations.of(this.context)!.platformlisttile_tiles_dialog_cdn_btn_copy_selected_message)));
                         },
                         itemBuilder: (context) {
                           return givenCdn;
@@ -479,7 +477,7 @@ class BilibiliOnlineListTile extends StatelessWidget {
                       ),
                       IconButton(
                         icon: const Icon(Icons.comment_outlined),
-                        tooltip: 'Only danmaku',
+                        tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_onlydanmaku_tooltip,
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -507,7 +505,7 @@ class BilibiliOnlineListTile extends StatelessWidget {
                         height: 200,
                         child: Center(
                           child:
-                              Text('Error loading image:${error.toString()}'),
+                              Text(AppLocalizations.of(context)!.platformlisttile_tiles_errordialog_image(error.toString())),
                         ),
                       );
                     }, loadingBuilder: (context, child, progress) {
@@ -526,7 +524,7 @@ class BilibiliOnlineListTile extends StatelessWidget {
                 ),
                 actions: <Widget>[
                   TextButton(
-                      child: const Text('Delete'),
+                      child: Text(AppLocalizations.of(context)!.uni_dialog_button_delete),
                       onPressed: () {
                         storage.deleteSingleLink(rawLink);
                         Navigator.push(context,
@@ -548,7 +546,7 @@ class BilibiliOnlineListTile extends StatelessWidget {
                     },
                   ), */
                   ElevatedButton(
-                    child: const Text('Back'),
+                    child: Text(AppLocalizations.of(context)!.uni_dialog_button_back),
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -598,9 +596,9 @@ class DouyuFutureListTileSkeleton extends StatelessWidget {
               stackTrace: snapshot.stackTrace,
             );
           }
-          return const ListTile(
-            title: Text('Loading...'),
-            subtitle: LinearProgressIndicator(),
+          return ListTile(
+            title: Text(AppLocalizations.of(context)!.platformlisttile_tiles_dialog_loading),
+            subtitle: const LinearProgressIndicator(),
           );
         },
       ),
@@ -663,13 +661,13 @@ class DouyuOnlineListTile extends StatelessWidget {
                       children: [
                         PopupMenuButton<String>(
                           icon: const Icon(Icons.copy),
-                          tooltip: 'Copy',
+                          tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_copy_tooltip,
                           onSelected: (context) {
                             Clipboard.setData(ClipboardData(text: context));
                             //show a scaffold to show the copy success
                             ScaffoldMessenger.of(this.context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Copied to clipboard')));
+                                SnackBar(
+                                    content: Text(AppLocalizations.of(this.context)!.platformlisttile_tiles_dialog_cdn_btn_copy_selected_message)));
                           },
                           itemBuilder: (context) {
                             return givenResolution;
@@ -677,7 +675,7 @@ class DouyuOnlineListTile extends StatelessWidget {
                         ),
                         PopupMenuButton<String>(
                           icon: const Icon(Icons.play_arrow),
-                          tooltip: 'Play',
+                          tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_play_tooltip,
                           onSelected: (context) {
                             String roomSelectedUrl = context;
                             Navigator.push(
@@ -695,7 +693,7 @@ class DouyuOnlineListTile extends StatelessWidget {
                         ),
                         IconButton(
                           icon: const Icon(Icons.comment_outlined),
-                          tooltip: 'Only danmaku',
+                          tooltip: AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_onlydanmaku_tooltip,
                           onPressed: () {
                             Navigator.push(
                                 context,
@@ -728,7 +726,7 @@ class DouyuOnlineListTile extends StatelessWidget {
                           height: 200,
                           child: Center(
                             child:
-                                Text('Error loading image:$error.toString()'),
+                                Text(AppLocalizations.of(context)!.platformlisttile_tiles_errordialog_image(error.toString())),
                           ),
                         );
                       }, loadingBuilder: (context, child, progress) {
@@ -748,7 +746,7 @@ class DouyuOnlineListTile extends StatelessWidget {
                 ),
                 actions: <Widget>[
                   TextButton(
-                      child: const Text('Delete'),
+                      child: Text(AppLocalizations.of(context)!.uni_dialog_button_delete),
                       onPressed: () {
                         storage.deleteSingleLink(rawLink);
                         Navigator.push(context,
@@ -757,7 +755,7 @@ class DouyuOnlineListTile extends StatelessWidget {
                         }));
                       }),
                   ElevatedButton(
-                    child: const Text('Back'),
+                    child: Text(AppLocalizations.of(context)!.uni_dialog_button_back),
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -768,9 +766,9 @@ class DouyuOnlineListTile extends StatelessWidget {
       },
       onLongPress: () {
         Clipboard.setData(ClipboardData(text: rawLink));
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-            content: Text('Copied to clipboard'),
-            duration: Duration(milliseconds: 500)));
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(AppLocalizations.of(context)!.platformlisttile_tiles_dialog_cdn_btn_copy_selected_message),
+            duration: const Duration(milliseconds: 500)));
       },
     );
   }
