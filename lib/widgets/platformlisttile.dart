@@ -268,6 +268,12 @@ class OfflineListTile extends StatelessWidget {
                           return const Home();
                         }));
                       }),
+                  ElevatedButton(
+                    child: Text(AppLocalizations.of(context)!.uni_dialog_button_back),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                 ],
               );
             });
