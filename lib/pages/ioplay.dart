@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ice_live_viewer/pages/mobileplay.dart';
-import 'package:ice_live_viewer/pages/desktopplay.dart';
+import 'package:ices_live_viewer/pages/mobileplay.dart';
+import 'package:ices_live_viewer/pages/desktopplay.dart';
 import 'dart:io';
 
 class StreamPlayer extends StatelessWidget {

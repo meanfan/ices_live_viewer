@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:ice_live_viewer/model/liveroom.dart';
+import 'package:ices_live_viewer/model/liveroom.dart';
 import 'package:http/http.dart' as http;
 import 'package:crypto/crypto.dart';
-import 'package:ice_live_viewer/utils/linkparser.dart';
+import 'package:ices_live_viewer/utils/linkparser.dart';
 
 class DouyuApi {
   static String _generateMd5(String input) {

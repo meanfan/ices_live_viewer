@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ice_live_viewer/model/liveroom.dart';
-import 'package:ice_live_viewer/utils/http/v2/httpapi.dart';
-import 'package:ice_live_viewer/utils/prefs_helper.dart';
+import 'package:ices_live_viewer/model/liveroom.dart';
+import 'package:ices_live_viewer/utils/http/v2/httpapi.dart';
+import 'package:ices_live_viewer/utils/prefs_helper.dart';
 
 class RoomsProvider with ChangeNotifier {
   RoomsProvider() {

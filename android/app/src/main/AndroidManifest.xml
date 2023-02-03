@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.iiijam.iceliveviewer">
+    package="top.meansome.icesliveviewer">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="iceliveviewer"
+        android:label="@string/appName"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

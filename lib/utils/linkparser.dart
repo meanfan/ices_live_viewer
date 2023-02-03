@@ -1,5 +1,5 @@
-import 'package:ice_live_viewer/utils/http/douyuparser.dart';
-import 'package:ice_live_viewer/utils/http/huyaparser.dart';
+import 'package:ices_live_viewer/utils/http/douyuparser.dart';
+import 'package:ices_live_viewer/utils/http/huyaparser.dart';
 
 class LinkParser {
   /// Parses a link and returns its id.

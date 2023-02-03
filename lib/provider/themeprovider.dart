@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ice_live_viewer/utils/prefs_helper.dart';
+import 'package:ices_live_viewer/utils/prefs_helper.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AppThemeProvider extends ChangeNotifier {

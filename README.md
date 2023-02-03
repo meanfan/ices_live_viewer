@@ -1,13 +1,13 @@
-# ice_live_viewer
+# ices_live_viewer
 
 <img width="100" alt="image" src="https://user-images.githubusercontent.com/16839488/159170616-6633b2c9-0b33-4dd1-9de4-b73b9d70eca4.png">
 
 ![](https://img.shields.io/badge/language-dart-blue.svg?style=for-the-badge&color=00ACC1)
 ![](https://img.shields.io/badge/flutter-00B0FF?style=for-the-badge&logo=flutter)
-[![](https://img.shields.io/github/downloads/iiijam/ice_live_viewer/total?style=for-the-badge&color=FF2196)](https://github.com/iiijam/ice_live_viewer/releases)
-![](https://img.shields.io/github/license/iiijam/ice_live_viewer?style=for-the-badge)
-![](https://img.shields.io/github/stars/iiijam/ice_live_viewer?style=for-the-badge)
-![](https://img.shields.io/github/issues/iiijam/ice_live_viewer?style=for-the-badge&color=9C27B0)
+[![](https://img.shields.io/github/downloads/meanfan/ices_live_viewer/total?style=for-the-badge&color=FF2196)](https://github.com/meanfan/ices_live_viewer/releases)
+![](https://img.shields.io/github/license/meanfan/ices_live_viewer?style=for-the-badge)
+![](https://img.shields.io/github/stars/meanfan/ices_live_viewer?style=for-the-badge)
+![](https://img.shields.io/github/issues/meanfan/ices_live_viewer?style=for-the-badge&color=9C27B0)
 
 A Flutter project can make you watch live with ease.
 
@@ -48,7 +48,7 @@ A Flutter project can make you watch live with ease.
 
    斗鱼的部分房间是虚假号码，也可以被转换
 
-如果你发现有房间无法解析，可以在[issue](https://github.com/iiijam/ice_live_viewer/issues/new/choose)反馈
+如果你发现有房间无法解析，可以在[issue](https://github.com/meanfan/ices_live_viewer/issues/new/choose)反馈
 
 ### 部分链接无法播放
 
@@ -58,7 +58,7 @@ A Flutter project can make you watch live with ease.
 
 - 你可以尝试在其它播放器里面播放，在Windows版本上使用的是VLC，在Android上使用的是系统播放组件
 
-如果排除了上述的问题，请提[issue](https://github.com/iiijam/ice_live_viewer/issues/new/choose)
+如果排除了上述的问题，请提[issue](https://github.com/meanfan/ices_live_viewer/issues/new/choose)
 
 ### 为什么这么难用
 如果你想要更好的用户体验，更人性化的交互设计，更稳定的使用，可以使用[哔哩哔哩APP](https://app.bilibili.com/)，[斗鱼APP](https://www.douyu.com/client)，[虎牙APP](https://www.huya.com/download/)

@@ -1,4 +1,4 @@
-import 'package:ice_live_viewer/utils/linkparser.dart';
+import 'package:ices_live_viewer/utils/linkparser.dart';
 
 enum LiveStatus { live, offline, replay, unknown }
 

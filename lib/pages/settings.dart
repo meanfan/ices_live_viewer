@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ice_live_viewer/provider/themeprovider.dart';
-import 'package:ice_live_viewer/utils/storage.dart';
+import 'package:ices_live_viewer/provider/themeprovider.dart';
+import 'package:ices_live_viewer/utils/storage.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

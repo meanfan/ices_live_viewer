@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:ice_live_viewer/pages/help.dart';
-import 'package:ice_live_viewer/pages/settings.dart';
-import 'package:ice_live_viewer/utils/linkparser.dart';
-import 'package:ice_live_viewer/utils/storage.dart' as storage;
-import 'package:ice_live_viewer/widgets/about.dart';
-import 'package:ice_live_viewer/widgets/platformlisttile.dart';
+import 'package:ices_live_viewer/pages/help.dart';
+import 'package:ices_live_viewer/pages/settings.dart';
+import 'package:ices_live_viewer/utils/linkparser.dart';
+import 'package:ices_live_viewer/utils/storage.dart' as storage;
+import 'package:ices_live_viewer/widgets/about.dart';
+import 'package:ices_live_viewer/widgets/platformlisttile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Home extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ice_live_viewer/widgets/bilibilianmaku.dart';
-import 'package:ice_live_viewer/widgets/huyadanmaku.dart';
+import 'package:ices_live_viewer/widgets/bilibilianmaku.dart';
+import 'package:ices_live_viewer/widgets/huyadanmaku.dart';
 import 'package:chewie/chewie.dart';
 import 'package:video_player/video_player.dart';
-import 'package:ice_live_viewer/widgets/douyudanmaku.dart';
+import 'package:ices_live_viewer/widgets/douyudanmaku.dart';
 import 'package:wakelock/wakelock.dart';
 
 class MobilePlayer extends StatefulWidget {

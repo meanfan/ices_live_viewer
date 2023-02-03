@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ice_live_viewer/pages/danmaku.dart';
-import 'package:ice_live_viewer/pages/home.dart';
-import 'package:ice_live_viewer/pages/ioplay.dart'
-    if (dart.library.html) 'package:ice_live_viewer/pages/webplay.dart';
-import 'package:ice_live_viewer/utils/http/bilibiliparser.dart' as bilibili;
-import 'package:ice_live_viewer/utils/http/huyaparser.dart' as huya;
-import 'package:ice_live_viewer/utils/http/douyuparser.dart';
-import 'package:ice_live_viewer/utils/keepalivewrapper.dart';
-import 'package:ice_live_viewer/utils/linkparser.dart';
-import 'package:ice_live_viewer/utils/storage.dart' as storage;
+import 'package:ices_live_viewer/pages/danmaku.dart';
+import 'package:ices_live_viewer/pages/home.dart';
+import 'package:ices_live_viewer/pages/ioplay.dart'
+    if (dart.library.html) 'package:ices_live_viewer/pages/webplay.dart';
+import 'package:ices_live_viewer/utils/http/bilibiliparser.dart' as bilibili;
+import 'package:ices_live_viewer/utils/http/huyaparser.dart' as huya;
+import 'package:ices_live_viewer/utils/http/douyuparser.dart';
+import 'package:ices_live_viewer/utils/keepalivewrapper.dart';
+import 'package:ices_live_viewer/utils/linkparser.dart';
+import 'package:ices_live_viewer/utils/storage.dart' as storage;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HuyaFutureListTileSkeleton extends StatelessWidget {

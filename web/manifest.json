@@ -1,6 +1,6 @@
 {
-    "name": "Ice Live Viewer",
-    "short_name": "iceliveviewer",
+    "name": "Ices Live Viewer",
+    "short_name": "icesliveviewer",
     "start_url": ".",
     "display": "standalone",
     "lang": "en-US",

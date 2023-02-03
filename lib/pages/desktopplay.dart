@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:dart_vlc/dart_vlc.dart';
-import 'package:ice_live_viewer/widgets/douyudanmaku.dart';
-import 'package:ice_live_viewer/widgets/videoframe.dart';
-import 'package:ice_live_viewer/widgets/bilibilianmaku.dart';
-import 'package:ice_live_viewer/widgets/huyadanmaku.dart';
+import 'package:ices_live_viewer/widgets/douyudanmaku.dart';
+import 'package:ices_live_viewer/widgets/videoframe.dart';
+import 'package:ices_live_viewer/widgets/bilibilianmaku.dart';
+import 'package:ices_live_viewer/widgets/huyadanmaku.dart';
 import 'package:wakelock/wakelock.dart';
 
 class VlcPlayer extends StatefulWidget {

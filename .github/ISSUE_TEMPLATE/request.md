@@ -9,7 +9,7 @@ assignees: ''
 **在提出问题时，请确保您已经阅读了以下内容**
  - [README](README.md)
 
- - [ISSUE](https://github.com/iiijam/ice_live_viewer/issues?q=)
+ - [ISSUE](https://github.com/meansome/ices_live_viewer/issues?q=)
 
  - [如何有效地报告 Bug](https://www.chiark.greenend.org.uk/~sgtatham/bugs-cn.html)
 

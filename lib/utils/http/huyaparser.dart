@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:html/parser.dart' show parse;
 import 'package:http/http.dart' as http;
-import 'package:ice_live_viewer/utils/storage.dart';
+import 'package:ices_live_viewer/utils/storage.dart';
 
 Future<Map<String, dynamic>> _getFromHuyaApi(String roomId) async {
   var resp = await http.get(

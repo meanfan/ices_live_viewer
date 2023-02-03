@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:ice_live_viewer/pages/settings.dart';
-import 'package:ice_live_viewer/utils/keepalivewrapper.dart';
+import 'package:ices_live_viewer/pages/settings.dart';
+import 'package:ices_live_viewer/utils/keepalivewrapper.dart';
 import 'package:provider/provider.dart';
-import 'package:ice_live_viewer/model/liveroom.dart';
-import 'package:ice_live_viewer/provider/roomprovider.dart';
+import 'package:ices_live_viewer/model/liveroom.dart';
+import 'package:ices_live_viewer/provider/roomprovider.dart';
 
 class NewHome extends StatelessWidget {
   const NewHome({Key? key}) : super(key: key);

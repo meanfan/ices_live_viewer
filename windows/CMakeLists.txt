@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(ice_live_viewer LANGUAGES CXX)
+project(ices_live_viewer LANGUAGES CXX)
 
-set(BINARY_NAME "ice_live_viewer")
+set(BINARY_NAME "ices_live_viewer")
 
 cmake_policy(SET CMP0063 NEW)
 
